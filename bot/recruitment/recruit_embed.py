@@ -3,8 +3,8 @@ import discord
 class RecruitEmbed:
 
     class_colors =  {
-        'DeathKnight' :  0xC41E3A,
-        'DemonHunter' :  0xA330C9,
+        'Death Knight' :  0xC41E3A,
+        'Demon Hunter' :  0xA330C9,
         'Druid' :  0xFF7C0A,
         'Evoker' :  0x33937F,
         'Hunter' :  0xAAD372,
