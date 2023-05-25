@@ -26,6 +26,13 @@ class RecruitCog(commands.Cog, name="Recruit"):
         """Looks up an applicant by ID"""
         await RecruitmentService.generate_recruit_channel(app_id=applicant_id, guild=ctx.guild)
         await ctx.respond('Printed app data.')
+
+
+    @recruit_group.command(description='Archive this app and comments.')
+    async def archive(self, ctx: commands.Context):
+        await RecruitmentService.archive_channel(ctx, self.bot.application_id)
+        await ctx.respond('Archived. Deleting channel momentarily.')
+        await ctx.channel.delete()
         
 
 
