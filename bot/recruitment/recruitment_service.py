@@ -25,7 +25,7 @@ class RecruitmentService:
 
         # Check if there is an archive for this app
         if os.path.isfile(f'archive/{app_id}-{char_name}.txt'):
-            with open(f'archive/{app_id}-{char_name}.txt') as f:
+            with open(f'archive/{app_id}-{char_name}.txt', encoding='utf-32') as f:
                 message = ''
                 for line in f:
                     message += line.strip() + '\n'
@@ -50,6 +50,6 @@ class RecruitmentService:
                 archived_messages.append(f"\n**{message.author}**\n")
             archived_messages.append(f"{message.content}\n")
         
-        with open(file_name, 'w') as f:
+        with open(file_name, 'w', encoding='utf-32') as f:
             for message in archived_messages:
                 f.write(message)
