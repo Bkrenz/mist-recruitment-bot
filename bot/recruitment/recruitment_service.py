@@ -17,7 +17,10 @@ class RecruitmentService:
         char_name = app_json['character_name'].split('-')[0]
 
         category = discord.utils.get(guild.categories, id=RecruitmentService.recruit_category)
-        channel = await guild.create_text_channel(f'{app_id}-{char_name}', category=category)
+        if os.path.isfile(f'archive/{app_id}-{char_name}.txt'):
+            channel = await guild.create_text_channel(f'{app_id}-{char_name}-archive', category=category)
+        else:
+            channel = await guild.create_text_channel(f'{app_id}-{char_name}', category=category)
 
         embed = RecruitEmbed.get_embed(app_json)
 
