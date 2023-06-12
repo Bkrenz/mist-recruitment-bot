@@ -9,7 +9,6 @@ from discord.ext import commands
 # Load the Environment Variables
 load_dotenv()
 
-
 async def main():
 
     # Setup Logging
